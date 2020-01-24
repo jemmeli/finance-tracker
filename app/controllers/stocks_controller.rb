@@ -5,8 +5,12 @@ class StocksController < ApplicationController
   	if params[:stock].present?
   		# the @ simbole for instance variable to use in the view
 	  	@stock = Stock.new_lookup(params[:stock])
+	  	#if not null
 	  	if @stock
-	  		render 'users/my_portfolio'
+	  		#setup javascript response and remove the html response
+	  		respond_to do |format|
+	  			format.js {render partial: 'users/result'}
+	  		end
 	  	else
 	  		flash[:alert] = "please enter a valid Syumbol to Search"
 			redirect_to my_portfolio_path
