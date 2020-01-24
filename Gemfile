@@ -38,6 +38,8 @@ gem 'jquery-rails'
 gem 'devise-bootstrap-views'
 #to get the API of iex stock
 gem 'iex-ruby-client'
+#font awsome
+gem 'font-awesome-rails'
 
 
 
