@@ -36,6 +36,8 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 #devise bootstrap view
 gem 'devise-bootstrap-views'
+#to get the API of iex stock
+gem 'iex-ruby-client'
 
 
 
