@@ -12,13 +12,18 @@ class StocksController < ApplicationController
 	  			format.js {render partial: 'users/result'}
 	  		end
 	  	else
-	  		flash[:alert] = "please enter a valid Syumbol to Search"
-			redirect_to my_portfolio_path
+	  		respond_to do |format|
+	  			#.now prevent the flash to take the full response/request cycle
+	  			flash.now[:alert] = "please enter a valid Syumbol to Search"
+	  			format.js {render partial: 'users/result'}
+	  		end
 	  	end
 
 	else
-		flash[:alert] = "please enter a Syumbol to Search"
-		redirect_to my_portfolio_path
+		respond_to do |format|
+  			flash.now[:alert] = "please enter Syumbol to Search"
+  			format.js {render partial: 'users/result'}
+  		end
 	end
 
   end
