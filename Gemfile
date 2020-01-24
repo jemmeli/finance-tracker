@@ -34,6 +34,8 @@ gem 'devise'
 # add bootstrap and all dependencies , Use SCSS for stylesheets
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
+#devise bootstrap view
+gem 'devise-bootstrap-views'
 
 
 
