@@ -31,7 +31,9 @@ gem 'jbuilder', '~> 2.5'
 
 #for authentication system
 gem 'devise'
-
+# add bootstrap and all dependencies , Use SCSS for stylesheets
+gem 'twitter-bootstrap-rails'
+gem 'jquery-rails'
 
 
 
