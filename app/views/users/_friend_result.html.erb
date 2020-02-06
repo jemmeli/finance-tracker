@@ -1,0 +1,13 @@
+<div class="results-block">
+	<%= render 'layouts/messages' %>
+</div>
+
+<% if @friend %>
+	<div class="well results-block">
+		<strong>EMAIL: </strong> <%= 'email'  %>
+		<strong>First Name: </strong> <%= 'first name' %>
+		<strong>Last  Name: </strong> <%= 'last name' %>
+		
+		<%= link_to 'Follow Friend?' , '#' , class: "btn btn-success" , method: :post %>
+	</div>
+<% end %>

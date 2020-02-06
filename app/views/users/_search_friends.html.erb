@@ -1,0 +1,28 @@
+
+<div class="row">
+	<div class="col-md-9">
+	
+		<!-- <h1>Find your Friend</h1> -->
+		<div class="search-area">
+			<!-- <h3>Search your Friend</h3> -->
+
+			<%= form_tag search_friends_path, remote: true, method: :get, id: 'search-friend-form' do %>
+			<div class="form-group row no-padding text-center col-md-12">
+				<div class="col-md-10">
+					<%= text_field_tag :friend, params[:friend], placeholder: "Find your Friends", autofocus: true, class: "form-control search-box input-lg" %>
+				</div>
+				<div class="col-md-2">
+					<%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+					<i class="fa fa-search"></i> Find a Friend
+					<% end %>
+				</div>
+			</div>
+			<% end %>
+
+		</div>
+
+		
+		<div id="results"></div>
+
+	</div>
+</div>
