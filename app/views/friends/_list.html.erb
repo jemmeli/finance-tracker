@@ -17,7 +17,11 @@
 				            <td><%= friend.email %></td>
 				            <td><%= friend.first_name %></td>
 				            <td><%= friend.last_name %></td>
-				            <td><%= link_to 'Stop folowing' , '#' , method: :delete, data: {confirm: 'Are you Sure'} ,class: 'btn btn-warning' %></td>
+				            <td>
+                      <%= link_to 'View profile' , user_path(friend) , class: 'btn btn-success' %>
+                      <%= link_to 'Stop folowing' , friendship_path(friend) , method: :delete, data: {confirm: 'Are you Sure'} ,class: 'btn btn-warning' %>
+
+                    </td>
 				        </tr>
 					<% end %>
 

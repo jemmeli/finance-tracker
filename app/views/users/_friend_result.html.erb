@@ -1,13 +1,32 @@
 <div class="results-block">
-	<%= render 'layouts/messages' %>
+  <%= render 'layouts/messages' %>
 </div>
 
-<% if @friend %>
-	<div class="well results-block">
-		<strong>EMAIL: </strong> <%= 'email'  %>
-		<strong>First Name: </strong> <%= 'first name' %>
-		<strong>Last  Name: </strong> <%= 'last name' %>
-		
-		<%= link_to 'Follow Friend?' , '#' , class: "btn btn-success" , method: :post %>
-	</div>
+<% if @friends %>
+  <div class="well results-block">
+
+    <table class="col-md-12">
+      <tbody>
+      <% @friends.each do |friend| %>
+        <tr>
+          <td><strong>NAME: </strong> <%= friend.full_name %></td>
+          <td><strong>EMAIL: </strong> <%= friend.email %></td>
+          <td><strong>Actions: </strong> <%= link_to 'View Profile', user_path(friend), class: "btn btn-small btn-success" %>
+
+            <% if current_user.not_friends_with?(friend.id) %>
+              <%= link_to 'Follow Friend?', friendships_path(friend: friend), class: "btn btn-success", method: :post %>
+            <% else %>
+            <span class="badge badge-secondary">
+              You are Friends Already
+            </span>
+            <% end %>
+
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+
+  </div>
 <% end %>
